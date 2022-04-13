@@ -9,7 +9,7 @@ int resolution_PWM = 10;
 // 绑定的IO，在下面的绑定函数里面会用到，绑定之后这个IO就会变成我们PWM的输出口
 const int PWM_Pin = 4; 
 
-void setup() {      //123123
+void setup() {
   Serial.begin(115200);
   ledcSetup(channel_PWM, freq_PWM, resolution_PWM); // 设置舵机通道
   ledcAttachPin(PWM_Pin, channel_PWM);  //将 LEDC 通道绑定到指定 IO 口上以实现输出
