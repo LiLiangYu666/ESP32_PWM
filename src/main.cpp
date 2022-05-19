@@ -17,11 +17,12 @@ void setup() {
 
 
 void loop() {
-  ledcWrite(channel_PWM, 102);  //20ms高电平时间2/20*1024 => 102，此时360度舵机正传135
-  delay(1000);
-  ledcWrite(channel_PWM, 25);  //20ms高电平时间0.5/20*1024 => 0.5，此时360度舵机几乎停转
-  delay(1000);
+
   ledcWrite(channel_PWM, 921);  //20ms高电平时间18/20*1024 => 921，此时360度舵机反转135
-  delay(1000);
+  delay(2000);
+  ledcWrite(channel_PWM, 25);  //20ms高电平时间0.5/20*1024 => 25，此时360度舵机几乎停转
+  delay(2000);  
+  ledcWrite(channel_PWM, 104);  //20ms高电平时间2/20*1024 => 104，此时360度舵机正转135
+  delay(2000);
   //ledcDetachPin(PWM_Pin);  //这个是解除IO口的pwm输出功能模式
 }
